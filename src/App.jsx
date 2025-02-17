@@ -1,10 +1,11 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import reactLogo from './assets/react.svg';
+import viteLogo from '/vite.svg';
+import './App.css';
+import representativeImage from './assets/representativa.jpg'; // Importa la imatge
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <>
@@ -28,8 +29,18 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      
+      <section className="project-info">
+        <h2>Desplegament duna aplicació web a Vercel mitjançant GitHub</h2>
+        <p><strong>Autor:</strong> [Guillem]</p>
+        <p>Este es un proyecto creado con Vite y React para explorar el desarrollo rápido de aplicaciones web.</p>
+      </section>
+
+      <section className="image-section">
+        <img src={representativeImage} alt="Imatge representativa" className="representative-image" />
+      </section>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
