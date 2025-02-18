@@ -2,10 +2,16 @@ import { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
-import representativeImage from './assets/representativa.jpg'; // Importa la imatge
+import representativeImage from './assets/representativa.jpg';
 
 function App() {
   const [count, setCount] = useState(0);
+  const [inputValue, setInputValue] = useState('');
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(inputValue);
+  };
 
   return (
     <>
@@ -29,7 +35,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-      
+
       <section className="project-info">
         <h2>Desplegament duna aplicació web a Vercel mitjançant GitHub</h2>
         <p><strong>Autor:</strong> [Guillem]</p>
@@ -38,6 +44,19 @@ function App() {
 
       <section className="image-section">
         <img src={representativeImage} alt="Imatge representativa" className="representative-image" />
+      </section>
+
+      <section className="form-section">
+        <h2>Formulari</h2>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+            placeholder="Escribe algo"
+          />
+          <button type="submit">Enviar</button>
+        </form>
       </section>
     </>
   );
