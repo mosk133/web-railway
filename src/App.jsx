@@ -8,9 +8,12 @@ function App() {
   const [count, setCount] = useState(0);
   const [inputValue, setInputValue] = useState('');
 
+  //Leer variable entorno
+  const welcomeMessage = import.meta.env.VITE_WELCOME_MESSAGE || 'Benvingut!';
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(inputValue);
+    console.log('Form submitted with input:', inputValue);
   };
 
   return (
@@ -47,7 +50,7 @@ function App() {
       </section>
 
       <section className="form-section">
-        <h2>Formulari</h2>
+        <h2>Simple Form</h2>
         <form onSubmit={handleSubmit}>
           <input
             type="text"
@@ -58,6 +61,9 @@ function App() {
           <button type="submit">Enviar</button>
         </form>
       </section>
+
+      {/* Mostrar el missatge de benvinguda */}
+      <p>{welcomeMessage}</p>
     </>
   );
 }
